@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ApexTow — Fleet Network & Commercial Recovery</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e55a00'/><text y='72' x='14' font-size='68' font-family='system-ui' font-weight='900' fill='white'>A</text></svg>">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+<div id="hdr-mount"></div>
+
+<!-- §1  HERO — dark cinematic, centered headline -->
+<section class="full-bg" style="min-height:66vh;display:flex;align-items:center;text-align:center;">
+  <img class="full-bg__img" src="https://assets.goaaa.com/image/upload/w_auto,q_auto,f_auto/v1755211471/AAA-Selects-49.jpg" alt="Commercial tow fleet on highway" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80'">
+  <div class="full-bg__overlay" style="background:linear-gradient(180deg,rgba(10,15,28,.78) 0%,rgba(10,15,28,.62) 100%)"></div>
+  <div class="wrap sec rv" style="max-width:860px;margin-inline:auto;">
+    <span class="chip chip-white" style="margin-bottom:1.5rem;">Commercial & Personal Recovery</span>
+    <h1 style="color:#fff;margin-bottom:1.25rem;">Precision towing for<br><em style="color:var(--accent2);font-style:normal;">every vehicle class.</em></h1>
+    <p style="color:rgba(255,255,255,.7);font-size:1.1rem;max-width:540px;margin-inline:auto;margin-bottom:2.5rem;">
+      From daily drivers to 50-ton semis — GPS-dispatched, certified, and transparent.
+    </p>
+    <!-- Vehicle selector pills -->
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem;" id="v-pills">
+      <button class="tab on" data-v="Passenger &amp; EV">Passenger / EV</button>
+      <button class="tab" data-v="Luxury">Luxury / Low-Clearance</button>
+      <button class="tab" data-v="Van / Box">Van / Box Truck</button>
+      <button class="tab" data-v="Semi / Rotator">Semi / Rotator</button>
+    </div>
+    <div class="glass-dark" style="display:inline-flex;align-items:center;gap:1.5rem;padding:1rem 1.5rem;border-radius:var(--radius-md);" id="v-result">
+      <div style="text-align:left;">
+        <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.45);" id="v-unit">UNIT: 21FT ALUMINUM FLATBED</div>
+        <div style="font-size:.95rem;font-weight:600;color:#fff;" id="v-info">Zero-drag wheel-strap · ETA 18 min · From $85</div>
+      </div>
+      <a href="pricing.html" class="btn btn-fill btn-sm" style="flex-shrink:0;">Get Quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- §2  FLEET SHOWCASE — tab-driven image cards -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
+      <div class="rv">
+        <span class="lbl lbl-accent">Specialized Fleet</span>
+        <h2>Right truck,<br>every scenario.</h2>
+      </div>
+      <div class="tabs rv" id="fleet-tabs">
+        <button class="tab on" data-f="flatbed">Flatbeds</button>
+        <button class="tab" data-f="rotator">Rotators</button>
+        <button class="tab" data-f="service">Service Vans</button>
+        <button class="tab" data-f="enclosed">Enclosed</button>
+      </div>
+    </div>
+    <div class="two" style="gap:2.5rem;align-items:start;" id="fleet-panel">
+      <div class="img-card rv-l" style="height:400px;">
+        <img id="f-img" src="https://xlspecializedtrailer.com/wp-content/uploads/2023/08/xl-hfg-yellow-rear-quarter.jpg" alt="21ft Low-Angle Hydraulic Flatbeds">
+        <div class="img-card__badge" id="f-badge">Light & Medium Duty</div>
+        <div class="img-card__over" style="justify-content:flex-start;background:none;padding:1.5rem;">
+          <div class="glass-dark" style="display:inline-block;padding:.4rem .8rem;border-radius:var(--radius-sm);">
+            <span style="font-size:.78rem;color:rgba(255,255,255,.65);">72 active units</span>
+          </div>
+        </div>
+      </div>
+      <div class="rv-r">
+        <h3 id="f-title" style="margin-bottom:.75rem;">21ft Low-Angle Hydraulic Flatbeds</h3>
+        <p id="f-desc" style="color:var(--muted);margin-bottom:1.5rem;">Engineered for AWD sedans, EVs, and lowered sports cars. 8-degree approach angle protects splitters and battery trays.</p>
+        <ul id="f-specs" style="display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem;">
+          <li style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;"><span style="color:var(--accent);">▸</span> 12,000 lb hydraulic winch</li>
+          <li style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;"><span style="color:var(--accent);">▸</span> 8-point soft nylon wheel straps</li>
+          <li style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;"><span style="color:var(--accent);">▸</span> EV high-voltage safety kit</li>
+        </ul>
+        <a href="coverage.html" class="btn btn-stroke">Fleet Availability →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §3  COVERAGE — SLA zone cards -->
+<section class="sec" style="background:var(--bg2);">
+  <div class="wrap">
+    <div style="text-align:center;max-width:560px;margin-inline:auto;margin-bottom:3rem;" class="rv">
+      <span class="lbl lbl-accent">Response Zones</span>
+      <h2>Pre-staged, not scrambled.</h2>
+    </div>
+    <div class="three">
+      <div class="img-card rv" style="height:280px;">
+        <img src="https://images.moneycontrol.com/static-mcnews/2018/10/Delhi-Metro-Blue-Line.jpg?impolicy=website&width=1600&height=900" alt="Downtown city">
+        <div class="img-card__over">
+          <div class="img-card__stat">18<span style="font-size:1.3rem;">min</span></div>
+          <h4>Downtown Metro</h4>
+        </div>
+      </div>
+      <div class="img-card rv" style="height:280px;">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=700&q=80" alt="Interstate highway">
+        <div class="img-card__over">
+          <div class="img-card__stat">24<span style="font-size:1.3rem;">min</span></div>
+          <h4>Interstate Highways</h4>
+        </div>
+      </div>
+      <div class="img-card rv" style="height:280px;">
+        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=700&q=80" alt="Industrial port">
+        <div class="img-card__over">
+          <div class="img-card__stat">28<span style="font-size:1.3rem;">min</span></div>
+          <h4>Port & Industrial</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §4  COMMERCIAL B2B — split bold -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap two" style="gap:4rem;">
+    <div class="rv-l">
+      <span class="lbl lbl-accent">B2B Fleet Program</span>
+      <h2 style="margin-bottom:1rem;">Keep your fleet<br>earning, not waiting.</h2>
+      <p style="color:var(--muted);max-width:420px;margin-bottom:2rem;">Priority dispatch, consolidated net-30 invoicing, and dedicated account support for logistics, dealerships, and municipalities.</p>
+      <div class="two" style="grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;">
+        <div style="padding:1.1rem;border-radius:var(--radius-md);background:var(--bg2);">
+          <div style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--accent);">24/7</div>
+          <div style="font-size:.85rem;color:var(--muted);">Priority lane</div>
+        </div>
+        <div style="padding:1.1rem;border-radius:var(--radius-md);background:var(--bg2);">
+          <div style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--accent);">Net-30</div>
+          <div style="font-size:.85rem;color:var(--muted);">Consolidated billing</div>
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn-fill">Partner With Us →</a>
+    </div>
+    <div class="rv-r" style="border-radius:var(--radius-xl);overflow:hidden;height:440px;">
+      <img src="https://www.visa.co.uk/content/dam/VCOM/regional/ve/unitedkingdom/in-page-images/fleet-mobility/uk-lorries-800x450.jpg" alt="Commercial fleet dispatch" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- §5  TRUST METRICS — dark band with big numbers -->
+<section style="background:#0a0a0a;padding-block:5rem;">
+  <div class="wrap rv">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;">
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);">98.7%</div>
+        <div style="color:rgba(255,255,255,.5);font-size:.88rem;margin-top:.35rem;">On-time SLA</div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);">28k+</div>
+        <div style="color:rgba(255,255,255,.5);font-size:.88rem;margin-top:.35rem;">Annual rescues</div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);">14</div>
+        <div style="color:rgba(255,255,255,.5);font-size:.88rem;margin-top:.35rem;">Dispatch hubs</div>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);">100%</div>
+        <div style="color:rgba(255,255,255,.5);font-size:.88rem;margin-top:.35rem;">WreckMaster staff</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §6  PLANS PREVIEW CTA -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap">
+    <div style="border-radius:var(--radius-xl);background:#0b1120;min-height:340px;display:flex;align-items:center;">
+      <div style="padding:3rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;width:100%;flex-wrap:wrap;">
+        <div class="rv">
+          <span class="chip chip-white" style="margin-bottom:1rem;">From $9/month</span>
+          <h2 style="color:#fff;margin-bottom:.65rem;">Protect every driver in your household.</h2>
+          <p style="color:rgba(255,255,255,.65);max-width:400px;">Unlimited jump-starts, lockouts, tire changes, and 100-mile flatbed towing included.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.75rem;" class="rv">
+          <a href="pricing.html" class="btn btn-white">Compare Plans →</a>
+          <a href="login.html" class="btn btn-ghost-white">Member Sign In</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="ftr-mount"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

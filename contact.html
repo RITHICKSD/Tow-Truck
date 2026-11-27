@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — ApexTow 24/7 Dispatch</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e55a00'/><text y='72' x='14' font-size='68' font-family='system-ui' font-weight='900' fill='white'>A</text></svg>">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+<div id="hdr-mount"></div>
+
+<!-- §1  HERO -->
+<section class="full-bg" style="min-height:55vh;display:flex;align-items:flex-end;padding-bottom:4rem;">
+  <img class="full-bg__img" src="w5.jpg" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='w5.png'}else if(this.dataset.t==1){this.dataset.t=2;this.src='w5.webp'}else{this.onerror=null;this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80'}" alt="Dispatch control center">
+  <div class="full-bg__overlay"></div>
+  <div class="wrap rv" style="text-align:center;max-width:720px;margin-inline:auto;">
+    <span class="chip chip-white" style="margin-bottom:1rem;">24/7 Dispatch</span>
+    <h1 style="color:#fff;margin-bottom:.85rem;">Reach us any time.<br><em style="color:var(--accent2);font-style:normal;">Day or night.</em></h1>
+  </div>
+</section>
+
+<!-- §2  INFO CARDS -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap four">
+    <div class="rv" style="border-radius:var(--radius-xl);background:var(--accent);padding:2rem;text-align:center;">
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.65);margin-bottom:.65rem;">Emergency Hotline</div>
+      <div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.35rem;">+1 (800) 555-0199</div>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.65);">Answered in &lt;12 seconds avg</div>
+    </div>
+    <div class="rv" style="border-radius:var(--radius-xl);background:var(--surface);border:1px solid var(--border);padding:2rem;text-align:center;">
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.65rem;">Commercial</div>
+      <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.35rem;">fleet@apextow.example</div>
+      <div style="font-size:.82rem;color:var(--muted);">SLA contracts & accounts</div>
+    </div>
+    <div class="rv" style="border-radius:var(--radius-xl);background:var(--surface);border:1px solid var(--border);padding:2rem;text-align:center;">
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.65rem;">Headquarters</div>
+      <div style="font-size:.92rem;font-weight:600;margin-bottom:.35rem;">420 Logistics Pkwy, Suite 300</div>
+      <div style="font-size:.82rem;color:var(--muted);">Metro North, ST 20190</div>
+    </div>
+    <div class="rv" style="border-radius:var(--radius-xl);background:var(--surface);border:1px solid var(--border);padding:2rem;text-align:center;">
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.65rem;">Hours</div>
+      <div style="font-size:.92rem;font-weight:600;margin-bottom:.35rem;">Dispatch: 24/7/365</div>
+      <div style="font-size:.82rem;color:var(--muted);">Office: Mon–Fri 8AM–6PM</div>
+    </div>
+  </div>
+</section>
+
+<!-- §3  CONTACT FORM — split with image -->
+<section class="sec" style="background:var(--bg2);">
+  <div class="wrap two" style="gap:3rem;align-items:start;">
+    <div class="rv-l" style="border-radius:var(--radius-xl);overflow:hidden;height:100%;min-height:400px;position:relative;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4CE32Hxn7YyNURiX35EiXJp0C30VN4t7xGFTa5av2cg&s=10" alt="Dispatch in action" style="width:100%;height:100%;object-fit:cover;filter:brightness(.55);">
+      <div style="position:absolute;inset:0;padding:2.5rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;">
+        <span class="lbl lbl-white">Safety First</span>
+        <p style="color:rgba(255,255,255,.75);font-size:.92rem;">If stopped in an active lane, turn on hazards and call 911 or our hotline immediately.</p>
+      </div>
+    </div>
+    <form id="contact-form" class="rv-r" style="display:flex;flex-direction:column;" novalidate>
+      <span class="lbl lbl-accent" style="margin-bottom:.5rem;">Send a Request</span>
+      <h2 style="margin-bottom:1.5rem;">Dispatch or fleet quote.</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;">
+        <div class="fg">
+          <label>Full Name *</label>
+          <input type="text" id="c-name" class="fc" placeholder="Alex Morgan" required>
+          <span class="ferr">Please enter your name.</span>
+        </div>
+        <div class="fg">
+          <label>Phone *</label>
+          <input type="tel" id="c-phone" class="fc" placeholder="(555) 234-5678" required>
+          <span class="ferr">Valid phone required.</span>
+        </div>
+      </div>
+      <div class="fg">
+        <label>Email *</label>
+        <input type="email" id="c-email" class="fc" placeholder="alex@example.com" required>
+        <span class="ferr">Valid email required.</span>
+      </div>
+      <div class="fg">
+        <label>Inquiry Type *</label>
+        <select id="c-topic" class="fc" required>
+          <option value="">Select…</option>
+          <option>Immediate Tow / Dispatch</option>
+          <option>Scheduled Transport</option>
+          <option>Fleet Partnership</option>
+          <option>Insurance / Billing</option>
+        </select>
+        <span class="ferr">Please select a topic.</span>
+      </div>
+      <div class="fg">
+        <label>Location & Vehicle *</label>
+        <textarea id="c-msg" class="fc" rows="4" placeholder="Vehicle make/model, pickup location, and issue…" required></textarea>
+        <span class="ferr">Please describe your situation (10+ chars).</span>
+      </div>
+      <button type="submit" class="btn btn-fill" style="align-self:flex-start;">Submit Request →</button>
+      <div id="c-success" style="display:none;margin-top:1rem;padding:.85rem;border-radius:var(--radius-sm);background:rgba(22,163,74,.1);color:#16a34a;font-weight:600;font-size:.9rem;">
+        ✓ Request received — Demo ticket #AT-8492 created.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- §4  INTERACTIVE DISPATCH HUB MAP (Leaflet) -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap">
+    <div style="text-align:center;max-width:520px;margin-inline:auto;margin-bottom:2.5rem;" class="rv">
+      <span class="lbl lbl-accent">Live Coverage Map</span>
+      <h2>Our dispatch command &amp; hubs.</h2>
+    </div>
+    <div class="rv" style="border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);background:var(--surface);">
+      <div id="contact-map" style="width:100%;height:380px;z-index:1;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- §5  FAQ ACCORDION -->
+<section class="sec" style="background:var(--bg2);">
+  <div class="wrap" style="max-width:760px;margin-inline:auto;">
+    <div style="text-align:center;margin-bottom:3rem;" class="rv">
+      <span class="lbl lbl-accent">Quick Answers</span>
+      <h2>Common questions.</h2>
+    </div>
+    <div class="rv">
+      <div class="acc open">
+        <button class="acc-hd" type="button">How fast can a truck reach me? <span class="icon">+</span></button>
+        <div class="acc-bd">Average metro arrival is 18 minutes. Interstate corridors average 20–28 minutes. You receive a live GPS link the moment a driver is assigned.</div>
+      </div>
+      <div class="acc">
+        <button class="acc-hd" type="button">Are there extra charges nights or weekends? <span class="icon">+</span></button>
+        <div class="acc-bd">No. ApexTow operates on flat 24/7 transparent pricing — same rate at 2 PM or 2 AM, every day of the year.</div>
+      </div>
+      <div class="acc">
+        <button class="acc-hd" type="button">Can you safely tow EVs and AWD vehicles? <span class="icon">+</span></button>
+        <div class="acc-bd">Yes. We dispatch low-angle hydraulic flatbeds with soft wheel-bonnet straps and full EV transport-mode procedures — all four wheels off the road.</div>
+      </div>
+      <div class="acc">
+        <button class="acc-hd" type="button">Do receipts work for insurance reimbursement? <span class="icon">+</span></button>
+        <div class="acc-bd">Every job includes an itemized digital invoice with DOT carrier ID, GPS timestamps, and mileage — formatted for instant insurer reimbursement.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §6  EMERGENCY CTA -->
+<section class="sec" style="background:#0b1120;padding-block:6rem;">
+  <div class="wrap rv" style="text-align:center;max-width:620px;margin-inline:auto;">
+    <h2 style="color:#fff;margin-bottom:.85rem;">Stranded right now?</h2>
+    <p style="color:rgba(255,255,255,.75);margin-bottom:2rem;">Call our 24/7 emergency line for instant nearest-truck routing.</p>
+    <a href="tel:+18005550199" class="btn btn-white btn-lg">Call +1 (800) 555-0199</a>
+  </div>
+</section>
+
+<div id="ftr-mount"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var mapEl = document.getElementById('contact-map');
+  if (!mapEl || typeof L === 'undefined') return;
+  var map = L.map('contact-map').setView([39.2904, -76.6122], 11);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 19,
+    attribution: 'Tiles &copy; Esri'
+  }).addTo(map);
+
+  var hubs = [
+    { name: 'ApexTow HQ', coords: [39.2904, -76.6122], info: '420 Logistics Pkwy, Suite 300 — 38 Units Active' },
+    { name: 'Westgate Interstate Post', coords: [39.2550, -76.6900], info: 'Exit 44 I-95 — 26 Highway Units' },
+    { name: 'Harbor Heavy Yard', coords: [39.2620, -76.5780], info: '1100 Port Industrial Rd — 14 Heavy Rotators' }
+  ];
+
+  hubs.forEach(function (h) {
+    L.marker(h.coords).addTo(map)
+      .bindPopup('<strong>' + h.name + '</strong><br>' + h.info);
+  });
+});
+</script>
+</body>
+</html>

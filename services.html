@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services — ApexTow Full Rescue Lineup</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e55a00'/><text y='72' x='14' font-size='68' font-family='system-ui' font-weight='900' fill='white'>A</text></svg>">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+<div id="hdr-mount"></div>
+
+<!-- §1  HERO — dark, full bleed -->
+<section class="full-bg" style="min-height:68vh;display:flex;align-items:flex-end;padding-bottom:4rem;">
+  <img class="full-bg__img" src="w2.jpg" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='w2.png'}else if(this.dataset.t==1){this.dataset.t=2;this.src='w2.webp'}else{this.onerror=null;this.src='https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80'}" alt="Recovery truck dispatch">
+  <div class="full-bg__overlay" style="background:linear-gradient(135deg,rgba(10,15,28,.82) 0%,rgba(10,15,28,.5) 100%);"></div>
+  <div class="wrap rv" style="text-align:center;max-width:760px;margin-inline:auto;">
+    <span class="chip chip-white" style="margin-bottom:1rem;">Full-Spectrum Recovery</span>
+    <h1 style="color:#fff;margin-bottom:.85rem;">Every rescue capability.<br><em style="color:var(--accent2);font-style:normal;">One call.</em></h1>
+    <div style="display:flex;gap:.65rem;flex-wrap:wrap;margin-top:1.25rem;justify-content:center;">
+      <a href="#flatbed" class="btn btn-fill btn-sm">Flatbed Towing</a>
+      <a href="#roadside" class="btn btn-ghost-white btn-sm">On-Site Fixes</a>
+      <a href="#heavy" class="btn btn-ghost-white btn-sm">Heavy Recovery</a>
+      <a href="#ev" class="btn btn-ghost-white btn-sm">EV & Exotic</a>
+    </div>
+  </div>
+</section>
+
+<!-- §2  SERVICE BENTO — filterable image grid -->
+<section class="sec" style="background:var(--bg);" id="roadside">
+  <div class="wrap">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
+      <div class="rv"><span class="lbl lbl-accent">Services</span><h2>Browse by category.</h2></div>
+      <div class="tabs rv" id="svc-tabs">
+        <button class="tab on" data-s="all">All</button>
+        <button class="tab" data-s="towing">Towing</button>
+        <button class="tab" data-s="roadside">Roadside</button>
+        <button class="tab" data-s="heavy">Heavy</button>
+      </div>
+    </div>
+    <div class="bento" style="grid-auto-rows:250px;" id="svc-grid">
+      <div class="img-card b-span5 b-row2 svc-card rv" data-s="towing" id="flatbed">
+        <img src="https://www.shutterstock.com/shutterstock/videos/3808024445/thumb/1.jpg?ip=x480" alt="Flatbed towing">
+        <div class="img-card__badge">From $85</div>
+        <div class="img-card__over">
+          <div class="img-card__stat">01</div>
+          <h3>24/7 Flatbed Towing</h3>
+          <p>All-wheels-off transport. EV, AWD, sports cars. Soft-strap loaded.</p>
+        </div>
+      </div>
+      <div class="img-card b-span4 svc-card rv" data-s="roadside" id="battery">
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80" alt="Battery jump">
+        <div class="img-card__badge">$65 flat</div>
+        <div class="img-card__over"><h4>Battery Jump & Test</h4><p>Surge-protected 12V/24V. Alternator check included.</p></div>
+      </div>
+      <div class="img-card b-span3 svc-card rv" data-s="roadside" id="tire">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Tire change">
+        <div class="img-card__badge">$75 flat</div>
+        <div class="img-card__over"><h4>Flat Tire & Spare</h4></div>
+      </div>
+      <div class="img-card b-span3 svc-card rv" data-s="roadside">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Ho6M7P3hPNvfYt5fMkWEmx7N4OHbTA9MntbXgG__EbrM4luhZwjGsQQ&s=10" alt="Lockout">
+        <div class="img-card__badge">$70 flat</div>
+        <div class="img-card__over"><h4>Lockout Rescue</h4></div>
+      </div>
+      <div class="img-card b-span4 svc-card rv" data-s="heavy" id="heavy">
+        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=700&q=80" alt="Heavy rotator">
+        <div class="img-card__badge">Commercial SLA</div>
+        <div class="img-card__over"><h4>50-Ton Rotator</h4><p>Semi, bus, RV, and construction recovery.</p></div>
+      </div>
+      <div class="img-card b-span5 svc-card rv" data-s="towing" id="ev">
+        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80" alt="EV transport">
+        <div class="img-card__badge">From $110</div>
+        <div class="img-card__over"><h4>EV & Exotic Flatbed</h4><p>Race-ramp load. High-voltage isolation protocol.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §3  WINCH & FUEL — split image -->
+<section class="sec" style="background:var(--bg2);">
+  <div class="wrap two" style="gap:3rem;align-items:stretch;">
+    <div class="img-card rv-l" style="min-height:360px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5XcLIDizw4dIrLUCRNWbD7E0paYcJ9lEQFKR9ThYiQw&s=10" alt="Winch recovery in snow">
+      <div class="img-card__over">
+        <div class="img-card__stat" style="font-size:2rem;">Winch-Out</div>
+        <p>150ft synthetic line. Mud, snow, ditch — zero frame twist.</p>
+      </div>
+    </div>
+    <div class="rv-r" style="display:flex;flex-direction:column;justify-content:center;">
+      <span class="lbl lbl-accent">Off-Road & Emergency</span>
+      <h2 style="margin-bottom:1rem;">Stuck or dry?<br>We come to you.</h2>
+      <p style="color:var(--muted);max-width:380px;margin-bottom:2rem;">Winch-out recovery or up to 5 gallons of unleaded/diesel delivered roadside.</p>
+      <div class="two" style="grid-template-columns:1fr 1fr;gap:1rem;">
+        <div style="padding:1.1rem;border-radius:var(--radius-md);background:var(--surface);border:1px solid var(--border);">
+          <div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent);">+$45</div>
+          <div style="font-size:.85rem;color:var(--muted);">Winch-out add-on</div>
+        </div>
+        <div style="padding:1.1rem;border-radius:var(--radius-md);background:var(--surface);border:1px solid var(--border);">
+          <div style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent);">$60</div>
+          <div style="font-size:.85rem;color:var(--muted);">Fuel delivery (3 gal)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §4  EQUIPMENT — 3 visual cards -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap">
+    <div style="text-align:center;max-width:520px;margin-inline:auto;margin-bottom:3rem;" class="rv">
+      <span class="lbl lbl-accent">Equipment</span>
+      <h2>Engineered for modern vehicles.</h2>
+    </div>
+    <div class="three">
+      <div class="rv" style="border-radius:var(--radius-xl);overflow:hidden;position:relative;height:300px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5XcLIDizw4dIrLUCRNWbD7E0paYcJ9lEQFKR9ThYiQw&s=10" alt="Soft straps" style="width:100%;height:100%;object-fit:cover;filter:brightness(.5);">
+        <div style="position:absolute;inset:0;padding:1.75rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;">
+          <div style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:.35rem;">8-Point Soft Straps</div>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.65);">Over-tire tread only. Suspension never touched.</p>
+        </div>
+      </div>
+      <div class="rv" style="border-radius:var(--radius-xl);overflow:hidden;position:relative;height:300px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqFNXyiSBQYI5CI9uNdYxdA2ctIVc8MZfXneTYTAy6Ag&s=10" alt="Race ramps" style="width:100%;height:100%;object-fit:cover;filter:brightness(.5);">
+        <div style="position:absolute;inset:0;padding:1.75rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;">
+          <div style="font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:.35rem;">6° Race Ramps</div>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.65);">Supercars and EV battery trays load without scraping.</p>
+        </div>
+      </div>
+      <div class="rv" style="border-radius:var(--radius-xl);overflow:hidden;position:relative;height:300px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ-MoH5gAcyrL_abRmxQ0LmUkQ3cESQeH3-tGPQfV8jY42jp6iDukqAsI&s=10" alt="4-camera inspection" style="width:100%;height:100%;object-fit:cover;filter:brightness(.5);">
+        <div style="position:absolute;inset:0;padding:1.75rem;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;">
+          <div style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:.35rem;">4-Angle Photo Check</div>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.65);">Timestamped pre/post-load evidence sent to your phone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §5  PROCESS STEPS -->
+<section class="sec" style="background:var(--bg2);">
+  <div class="wrap">
+    <div style="text-align:center;max-width:480px;margin-inline:auto;margin-bottom:3.5rem;" class="rv">
+      <span class="lbl lbl-accent">Dispatch Standard</span>
+      <h2>How every call is handled.</h2>
+    </div>
+    <div class="steps-track rv">
+      <div class="step-item"><div class="step-num">01</div><h4>Triage</h4><p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">Safety check & GPS pin.</p></div>
+      <div class="step-item"><div class="step-num">02</div><h4>Right Unit</h4><p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">Closest qualified truck dispatched.</p></div>
+      <div class="step-item"><div class="step-num">03</div><h4>Load</h4><p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">Certified hookup + photo docs.</p></div>
+      <div class="step-item"><div class="step-num">04</div><h4>Receipt</h4><p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">Insurance-ready invoice emailed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- §6  CTA -->
+<section style="background:var(--accent);padding-block:5rem;">
+  <div class="wrap rv" style="text-align:center;max-width:600px;margin-inline:auto;">
+    <h2 style="color:#fff;margin-bottom:.85rem;">Not sure which truck you need?</h2>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:2rem;">Use our transparent estimator or call our 24/7 desk right now.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="pricing.html" class="btn btn-white btn-lg">Estimate Cost</a>
+      <a href="contact.html" class="btn btn-ghost-white btn-lg">Call 24/7 Dispatch</a>
+    </div>
+  </div>
+</section>
+
+<div id="ftr-mount"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

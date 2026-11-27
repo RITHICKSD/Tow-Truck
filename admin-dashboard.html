@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard — ApexTow Dispatch Command</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e55a00'/><text y='72' x='14' font-size='68' font-family='system-ui' font-weight='900' fill='white'>A</text></svg>">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+<div class="dash-shell">
+  <!-- Left Sidebar -->
+  <aside class="dash-side" id="dash-side">
+    <div>
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L4 6v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V6l-8-4z"/></svg>
+        </span>
+        <span>ApexTow<span class="brand-sub">Admin Command</span></span>
+      </a>
+
+      <nav class="dash-nav" aria-label="Admin Sidebar">
+        <button class="dash-link on" data-tab="overview"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg> Dispatch Overview</button>
+        <button class="dash-link" data-tab="fleet"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Active Fleet (140)</button>
+        <button class="dash-link" data-tab="jobs"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Live Jobs</button>
+        <button class="dash-link" data-tab="revenue"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Revenue &amp; SLA</button>
+        <button class="dash-link" data-tab="drivers"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Certified Drivers</button>
+      </nav>
+    </div>
+
+    <button class="dash-logout" onclick="location.href='login.html'">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Logout
+    </button>
+  </aside>
+
+  <!-- Sidebar overlay backdrop (mobile) -->
+  <div class="dash-overlay" id="dash-overlay"></div>
+
+  <!-- Right Content Area -->
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar-left">
+        <button type="button" id="dash-ham" class="dash-ham" aria-label="Open sidebar" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <h2 id="dash-page-title">Dispatch Overview</h2>
+      </div>
+      <div class="dash-topbar-right">
+        <button type="button" id="th-btn" class="icon-btn" title="Toggle Theme"><span id="th-icon"></span></button>
+        <button type="button" id="dir-btn" class="icon-btn" title="Toggle LTR/RTL"><span id="dir-lbl">RTL</span></button>
+        <div class="dash-profile">
+          <span class="dash-avatar" style="background:#0f172a;">RC</span>
+          <span class="dash-profile-name">Ray Callahan (Admin)</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="dash-body">
+      <div class="dash-tab-panel on" id="tab-overview">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span class="lbl">Active Dispatches</span>
+            <div class="kpi-val" style="color:var(--accent);">34</div>
+            <span style="font-size:.8rem;color:#16a34a;">98.7% on-time SLA</span>
+          </div>
+          <div class="kpi-card">
+            <span class="lbl">Available Units</span>
+            <div class="kpi-val">106</div>
+            <span style="font-size:.8rem;color:var(--muted);">Out of 140 total</span>
+          </div>
+          <div class="kpi-card">
+            <span class="lbl">Daily Revenue</span>
+            <div class="kpi-val">$18.4k</div>
+            <span style="font-size:.8rem;color:#16a34a;">+14% vs yesterday</span>
+          </div>
+          <div class="kpi-card">
+            <span class="lbl">Avg Metro ETA</span>
+            <div class="kpi-val">18m</div>
+            <span style="font-size:.8rem;color:var(--muted);">Target &lt; 22m</span>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <!-- Bar Chart -->
+          <div class="chart-card">
+            <h4 style="margin-bottom:.25rem;">Weekly Dispatch Volume</h4>
+            <p style="font-size:.82rem;color:var(--muted);">Completed rescues per day</p>
+            <div class="bar-chart">
+              <div class="bar-col"><div class="bar-fill" style="height:60%;"></div><span class="bar-lbl">Mon</span></div>
+              <div class="bar-col"><div class="bar-fill" style="height:75%;"></div><span class="bar-lbl">Tue</span></div>
+              <div class="bar-col"><div class="bar-fill" style="height:55%;"></div><span class="bar-lbl">Wed</span></div>
+              <div class="bar-col"><div class="bar-fill" style="height:85%;"></div><span class="bar-lbl">Thu</span></div>
+              <div class="bar-col"><div class="bar-fill" style="height:95%;"></div><span class="bar-lbl">Fri</span></div>
+              <div class="bar-col"><div class="bar-fill" style="height:88%;"></div><span class="bar-lbl">Sat</span></div>
+              <div class="bar-col"><div class="bar-fill" style="height:70%;"></div><span class="bar-lbl">Sun</span></div>
+            </div>
+          </div>
+
+          <!-- Pie / Donut Chart -->
+          <div class="chart-card">
+            <h4 style="margin-bottom:.25rem;">Fleet Utilization</h4>
+            <p style="font-size:.82rem;color:var(--muted);">By truck class</p>
+            <div style="display:flex;align-items:center;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap;">
+              <svg width="150" height="150" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--bg2)" stroke-width="4"></circle>
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#e55a00" stroke-width="4" stroke-dasharray="55 45" stroke-dashoffset="25"></circle>
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f5a623" stroke-width="4" stroke-dasharray="25 75" stroke-dashoffset="-30"></circle>
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="20 80" stroke-dashoffset="-55"></circle>
+              </svg>
+              <div style="display:flex;flex-direction:column;gap:.55rem;font-size:.85rem;">
+                <div><span style="color:#e55a00;">●</span> Flatbeds (55%)</div>
+                <div><span style="color:#f5a623;">●</span> Service Vans (25%)</div>
+                <div><span style="color:#38bdf8;">●</span> Heavy Rotators (20%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Jobs Table -->
+        <div class="table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr><th>Job ID</th><th>Unit</th><th>Zone</th><th>Driver</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="mono">#AT-8501</td><td>Flatbed #412</td><td>I-95 Exit 44</td><td>M. Diaz</td><td><span class="status-pill st-active">En Route (6m)</span></td></tr>
+              <tr><td class="mono">#AT-8500</td><td>Rotator #108</td><td>Harbor Port</td><td>K. Vance</td><td><span class="status-pill st-pending">Loading</span></td></tr>
+              <tr><td class="mono">#AT-8499</td><td>Service Van #22</td><td>Downtown Metro</td><td>S. Patel</td><td><span class="status-pill st-done">Completed</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dash-tab-panel" id="tab-fleet"><div class="kpi-card"><h4>Active Fleet (140 Units)</h4><p style="color:var(--muted);margin-top:.4rem;">72 Flatbeds · 24 Wheel-Lifts · 14 Heavy Rotators · 30 Mobile Service Vans.</p></div></div>
+      <div class="dash-tab-panel" id="tab-jobs"><div class="kpi-card"><h4>Live Dispatch Queue</h4><p style="color:var(--muted);margin-top:.4rem;">34 active jobs currently routed across 14 staging hubs.</p></div></div>
+      <div class="dash-tab-panel" id="tab-revenue"><div class="kpi-card"><h4>Revenue &amp; SLA</h4><p style="color:var(--muted);margin-top:.4rem;">Monthly recurring fleet contracts + on-demand dispatch revenue tracking.</p></div></div>
+      <div class="dash-tab-panel" id="tab-drivers"><div class="kpi-card"><h4>Certified Drivers</h4><p style="color:var(--muted);margin-top:.4rem;">100% WreckMaster &amp; DOT-certified operators on active rotation.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const TK = 'apx_theme', DK = 'apx_dir';
+  document.documentElement.setAttribute('data-theme', localStorage.getItem(TK) || 'light');
+  document.documentElement.setAttribute('dir', localStorage.getItem(DK) || 'ltr');
+
+  function sync() {
+    const t = document.documentElement.getAttribute('data-theme');
+    const d = document.documentElement.getAttribute('dir');
+    document.getElementById('th-icon').innerHTML = t === 'dark'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    document.getElementById('dir-lbl').textContent = d === 'rtl' ? 'LTR' : 'RTL';
+  }
+  sync();
+
+  document.getElementById('th-btn').addEventListener('click', () => {
+    const n = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', n);
+    localStorage.setItem(TK, n);
+    sync();
+  });
+  document.getElementById('dir-btn').addEventListener('click', () => {
+    const n = document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
+    document.documentElement.setAttribute('dir', n);
+    localStorage.setItem(DK, n);
+    sync();
+  });
+
+  document.getElementById('side-toggle')?.addEventListener('click', () => {
+    document.getElementById('dash-side').classList.toggle('open');
+  });
+
+  // Mobile dash-ham button
+  const dashHam = document.getElementById('dash-ham');
+  const dashSide = document.getElementById('dash-side');
+  const dashOverlay = document.getElementById('dash-overlay');
+
+  function openSidebar() {
+    dashSide.classList.add('open');
+    dashOverlay.classList.add('open');
+    dashHam?.classList.add('open');
+    dashHam?.setAttribute('aria-expanded','true');
+  }
+  function closeSidebar() {
+    dashSide.classList.remove('open');
+    dashOverlay.classList.remove('open');
+    dashHam?.classList.remove('open');
+    dashHam?.setAttribute('aria-expanded','false');
+  }
+
+  dashHam?.addEventListener('click', () => {
+    dashSide.classList.contains('open') ? closeSidebar() : openSidebar();
+  });
+  dashOverlay?.addEventListener('click', closeSidebar);
+
+  document.querySelectorAll('.dash-link').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.dash-link').forEach(b => b.classList.remove('on'));
+      document.querySelectorAll('.dash-tab-panel').forEach(p => p.classList.remove('on'));
+      btn.classList.add('on');
+      document.getElementById('tab-' + btn.dataset.tab)?.classList.add('on');
+      document.getElementById('dash-page-title').textContent = btn.textContent.trim().replace(/^[\s\S]{0,2}/, '').trim();
+      closeSidebar();
+    });
+  });
+})();
+</script>
+</body>
+</html>

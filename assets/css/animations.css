@@ -1,0 +1,64 @@
+/* ApexTow — Animations & Polish */
+
+body{animation:pagein .35s ease both}
+@keyframes pagein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* staggered grid reveals */
+.three>.rv:nth-child(1),.four>.rv:nth-child(1),.bento>.rv:nth-child(1){transition-delay:0s}
+.three>.rv:nth-child(2),.four>.rv:nth-child(2),.bento>.rv:nth-child(2){transition-delay:.08s}
+.three>.rv:nth-child(3),.four>.rv:nth-child(3),.bento>.rv:nth-child(3){transition-delay:.16s}
+.four>.rv:nth-child(4),.bento>.rv:nth-child(4){transition-delay:.24s}
+.bento>.rv:nth-child(5){transition-delay:.32s}
+.bento>.rv:nth-child(6){transition-delay:.40s}
+
+/* image card hover glow */
+.img-card::after{
+  content:'';position:absolute;inset:0;border-radius:inherit;
+  box-shadow:inset 0 0 0 1.5px rgba(229,90,0,0);
+  transition:box-shadow .3s ease;pointer-events:none;
+}
+.img-card:hover::after{box-shadow:inset 0 0 0 2px var(--accent)}
+
+/* scrolled header shadow */
+.site-header.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.1)}
+
+/* step num pulse on hover */
+.step-item:hover .step-num{transform:scale(1.08);transition:transform .25s ease}
+.step-num{transition:transform .25s ease}
+
+/* smooth scrollbar */
+::-webkit-scrollbar{width:7px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+
+/* pulse animation (hero dot) */
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}
+  70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}
+  100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+}
+
+/* accordion icon rotation */
+.acc.open .acc-hd span.icon{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg)}
+
+/* plan card popular glow */
+.btn-fill{position:relative;overflow:hidden}
+.btn-fill::before{content:'';position:absolute;inset:-50%;background:radial-gradient(circle,rgba(255,255,255,.2) 0%,transparent 70%);opacity:0;transition:opacity .3s}
+.btn-fill:hover::before{opacity:1}
+
+/* glass on dark subtlety */
+.glass:hover{background:rgba(255,255,255,.12);transition:background .25s}
+
+/* hero stats float animation */
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.rv-r [style*="sticky"]{animation:floatUp 4s ease-in-out infinite}
+
+/* Mobile nav responsive fixes */
+@media(max-width:768px){
+  .four{grid-template-columns:1fr 1fr !important}
+}
+@media(max-width:480px){
+  .four{grid-template-columns:1fr !important}
+  .full-bg{min-height:50vh !important}
+}

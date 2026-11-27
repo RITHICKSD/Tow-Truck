@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login — ApexTow Member Portal</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e55a00'/><text y='72' x='14' font-size='68' font-family='system-ui' font-weight='900' fill='white'>A</text></svg>">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem;position:relative;">
+
+  <!-- Top-Right Theme & RTL Toggles -->
+  <div style="position:fixed;top:1.25rem;inset-inline-end:1.25rem;display:flex;gap:.5rem;z-index:20;">
+    <button type="button" id="th-btn" class="icon-btn" title="Toggle Theme"><span id="th-icon"></span></button>
+    <button type="button" id="dir-btn" class="icon-btn" title="Toggle LTR/RTL"><span id="dir-lbl">RTL</span></button>
+  </div>
+
+  <!-- Centered Login Card -->
+  <div style="width:100%;max-width:420px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.25rem;box-shadow:0 20px 50px rgba(0,0,0,.08);">
+    <div style="display:flex;justify-content:center;margin-bottom:1.75rem;">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L4 6v6c0 5.25 3.4 9.74 8 11 4.6-1.26 8-5.75 8-11V6l-8-4z"/></svg>
+        </span>
+        <span>ApexTow<span class="brand-sub">24/7 Dispatch</span></span>
+      </a>
+    </div>
+
+    <h2 style="font-size:1.6rem;text-align:center;margin-bottom:.35rem;">Welcome Back</h2>
+    <p style="text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:1.75rem;">Sign in to your member or fleet account</p>
+
+    <form id="login-form" novalidate>
+      <div class="fg">
+        <label>Email or Username *</label>
+        <input type="text" id="l-email" class="fc" placeholder="driver@example.com" required>
+        <span class="ferr">Please enter your email or username.</span>
+      </div>
+      <div class="fg">
+        <label>Password *</label>
+        <div style="position:relative;">
+          <input type="password" id="l-pwd" class="fc" placeholder="Your password" style="padding-inline-end:4rem;" required>
+          <button type="button" id="toggle-pwd" style="position:absolute;inset-inline-end:.85rem;top:50%;transform:translateY(-50%);background:transparent;border:none;color:var(--accent);font-size:.8rem;font-weight:700;cursor:pointer;">Show</button>
+        </div>
+        <span class="ferr">Password must be at least 6 characters.</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;font-size:.86rem;">
+        <label style="display:inline-flex;align-items:center;gap:.45rem;cursor:pointer;">
+          <input type="checkbox" id="remember" style="accent-color:var(--accent);">
+          <span>Remember me</span>
+        </label>
+        <a href="#" id="forgot-link" style="color:var(--accent);font-weight:600;">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn btn-fill" style="width:100%;margin-bottom:1rem;">Sign In</button>
+      <div id="auth-feedback" style="display:none;padding:.8rem;border-radius:var(--radius-sm);background:rgba(229,90,0,.1);color:var(--accent);font-size:.86rem;font-weight:600;margin-bottom:1rem;"></div>
+    </form>
+
+    <div style="text-align:center;font-size:.88rem;color:var(--muted);padding-top:1rem;border-top:1px solid var(--border);">
+      Don't have an account? <a href="register.html" style="color:var(--accent);font-weight:700;">Register</a>
+    </div>
+    <div style="text-align:center;margin-top:.75rem;">
+      <a href="index.html" style="font-size:.82rem;color:var(--muted);">← Back to Home</a>
+    </div>
+  </div>
+
+<script>
+(function () {
+  const TK = 'apx_theme', DK = 'apx_dir';
+  document.documentElement.setAttribute('data-theme', localStorage.getItem(TK) || 'light');
+  document.documentElement.setAttribute('dir', localStorage.getItem(DK) || 'ltr');
+
+  function sync() {
+    const t = document.documentElement.getAttribute('data-theme');
+    const d = document.documentElement.getAttribute('dir');
+    document.getElementById('th-icon').innerHTML = t === 'dark'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    document.getElementById('dir-lbl').textContent = d === 'rtl' ? 'LTR' : 'RTL';
+  }
+  sync();
+
+  document.getElementById('th-btn').addEventListener('click', () => {
+    const n = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', n);
+    localStorage.setItem(TK, n);
+    sync();
+  });
+  document.getElementById('dir-btn').addEventListener('click', () => {
+    const n = document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
+    document.documentElement.setAttribute('dir', n);
+    localStorage.setItem(DK, n);
+    sync();
+  });
+
+  const tp = document.getElementById('toggle-pwd');
+  const pw = document.getElementById('l-pwd');
+  tp.addEventListener('click', () => {
+    const s = pw.type === 'password';
+    pw.type = s ? 'text' : 'password';
+    tp.textContent = s ? 'Hide' : 'Show';
+  });
+
+  document.getElementById('forgot-link').addEventListener('click', e => {
+    e.preventDefault();
+    const fb = document.getElementById('auth-feedback');
+    fb.style.display = 'block';
+    fb.textContent = 'Password reset link sent to your registered email (Demo).';
+  });
+
+  document.getElementById('login-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const em = document.getElementById('l-email');
+    const emOk = em.value.trim().length >= 3;
+    const pwOk = pw.value.length >= 6;
+    em.closest('.fg').classList.toggle('err', !emOk);
+    pw.closest('.fg').classList.toggle('err', !pwOk);
+    if (emOk && pwOk) {
+      location.href = 'user-dashboard.html';
+    }
+  });
+})();
+</script>
+</body>
+</html>

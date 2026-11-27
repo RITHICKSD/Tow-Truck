@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coverage & Fleet — ApexTow Service Zones</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e55a00'/><text y='72' x='14' font-size='68' font-family='system-ui' font-weight='900' fill='white'>A</text></svg>">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+<div id="hdr-mount"></div>
+
+<!-- §1  HERO (Centered) -->
+<section class="full-bg" style="min-height:55vh;display:flex;align-items:flex-end;padding-bottom:4rem;text-align:center;">
+  <img class="full-bg__img" src="w4.jpg" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='w4.png'}else if(this.dataset.t==1){this.dataset.t=2;this.src='w4.webp'}else{this.onerror=null;this.src='https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=80'}" alt="Coverage network">
+  <div class="full-bg__overlay" style="background:linear-gradient(135deg,rgba(10,15,28,.82) 0%,rgba(10,15,28,.55) 100%);"></div>
+  <div class="wrap rv" style="max-width:760px;margin-inline:auto;">
+    <span class="chip chip-white" style="margin-bottom:1.25rem;">14 Dispatch Hubs · Tri-State</span>
+    <h1 style="color:#fff;margin-bottom:1rem;">Coverage without<br><em style="color:var(--accent2);font-style:normal;">blind spots.</em></h1>
+    <p style="color:#cbd5e1;font-size:1.1rem;max-width:520px;margin-inline:auto;">Pre-staged trucks near every major interchange — metro, interstate, and industrial corridors.</p>
+  </div>
+</section>
+
+<!-- §2  ZONE FILTER GRID (Imageless) -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
+      <div class="rv"><span class="lbl lbl-accent">Live Dispatch Zones</span><h2>Filter by corridor type.</h2></div>
+      <div class="tabs rv" id="zone-tabs">
+        <button class="tab on" data-z="all">All Zones</button>
+        <button class="tab" data-z="metro">Metro</button>
+        <button class="tab" data-z="interstate">Interstate</button>
+        <button class="tab" data-z="industrial">Industrial</button>
+      </div>
+    </div>
+    <div class="three" id="zone-grid" style="gap:1.25rem;">
+      <div class="zone-card rv" data-z="metro" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <span class="chip chip-accent" style="margin-bottom:1rem;">16 min ETA</span>
+        <h4>Downtown Metro</h4>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.4rem;">18 compact flatbeds & wheel-lifts navigating garages and city arterials.</p>
+      </div>
+      <div class="zone-card rv" data-z="interstate" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <span class="chip chip-accent" style="margin-bottom:1rem;">21 min ETA</span>
+        <h4>I-95 & Beltway</h4>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.4rem;">34 highway patrol flatbeds staged every 12 miles along express lanes.</p>
+      </div>
+      <div class="zone-card rv" data-z="industrial" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <span class="chip chip-accent" style="margin-bottom:1rem;">25 min ETA</span>
+        <h4>Harbor Port</h4>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.4rem;">12 heavy wreckers & 50-ton rotators for container chassis and semis.</p>
+      </div>
+      <div class="zone-card rv" data-z="metro" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <span class="chip chip-accent" style="margin-bottom:1rem;">18 min ETA</span>
+        <h4>Northgate Tech Park</h4>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.4rem;">EV-certified flatbeds & mobile battery vans serving suburban campuses.</p>
+      </div>
+      <div class="zone-card rv" data-z="interstate" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <span class="chip chip-accent" style="margin-bottom:1rem;">24 min ETA</span>
+        <h4>Rt 70 Mountain Pass</h4>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.4rem;">4×4 winch rigs built for steep grades, snow, and shoulder extractions.</p>
+      </div>
+      <div class="zone-card rv" data-z="industrial" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <span class="chip chip-accent" style="margin-bottom:1rem;">22 min ETA</span>
+        <h4>Airport Cargo Hub</h4>
+        <p style="color:var(--muted);font-size:.9rem;margin-top:.4rem;">24/7 rapid response for rental fleets, shuttle buses, and cargo vans.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §2.5  LIVE COVERAGE MAP (Self-Contained Interactive Hub Map) -->
+<section class="sec" style="background:var(--bg2);padding-top:3rem;">
+  <div class="wrap">
+    <div style="text-align:center;max-width:560px;margin-inline:auto;margin-bottom:2rem;" class="rv">
+      <span class="lbl lbl-accent">Interactive Network</span>
+      <h2>Live Coverage Map</h2>
+      <p style="color:var(--muted);font-size:.95rem;margin-top:.5rem;">Click any dispatch hub pin to inspect active units and average response ETA.</p>
+    </div>
+    <div class="rv" style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);background:#0f172a;position:relative;height:400px;">
+      <!-- Grid & Corridor Lines -->
+      <svg viewBox="0 0 800 400" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;opacity:.25;pointer-events:none;">
+        <defs>
+          <pattern id="cov-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#94a3b8" stroke-width="0.6"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="400" fill="url(#cov-grid)"/>
+        <path d="M 60 220 Q 260 170 420 210 T 740 160" fill="none" stroke="#e55a00" stroke-width="3" stroke-dasharray="8 6"/>
+        <path d="M 220 50 Q 340 200 400 350" fill="none" stroke="#f5a623" stroke-width="2.5" stroke-dasharray="6 6"/>
+      </svg>
+
+      <!-- Hub Pins -->
+      <button type="button" class="cov-pin" data-hub="Downtown Metro Hub" data-eta="16 min ETA" data-units="18 flatbeds & wheel-lifts" style="position:absolute;left:46%;top:48%;transform:translate(-50%,-50%);background:var(--accent);color:#fff;border:2px solid #fff;border-radius:99px;padding:.35rem .75rem;font-size:.78rem;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4);">Downtown</button>
+      <button type="button" class="cov-pin" data-hub="I-95 & Beltway Staging" data-eta="21 min ETA" data-units="34 highway patrol flatbeds" style="position:absolute;left:68%;top:32%;transform:translate(-50%,-50%);background:var(--surface);color:var(--text);border:2px solid var(--accent);border-radius:99px;padding:.35rem .75rem;font-size:.78rem;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4);">I-95 Beltway</button>
+      <button type="button" class="cov-pin" data-hub="Harbor Port Heavy Yard" data-eta="25 min ETA" data-units="12 heavy wreckers & 50T rotators" style="position:absolute;left:60%;top:68%;transform:translate(-50%,-50%);background:var(--surface);color:var(--text);border:2px solid var(--accent);border-radius:99px;padding:.35rem .75rem;font-size:.78rem;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4);">Harbor Port</button>
+      <button type="button" class="cov-pin" data-hub="Northgate Tech Park" data-eta="18 min ETA" data-units="EV-certified flatbeds & battery vans" style="position:absolute;left:36%;top:22%;transform:translate(-50%,-50%);background:var(--surface);color:var(--text);border:2px solid var(--accent);border-radius:99px;padding:.35rem .75rem;font-size:.78rem;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4);">Northgate</button>
+      <button type="button" class="cov-pin" data-hub="Rt 70 Mountain Pass" data-eta="24 min ETA" data-units="4x4 winch rigs" style="position:absolute;left:18%;top:44%;transform:translate(-50%,-50%);background:var(--surface);color:var(--text);border:2px solid var(--accent);border-radius:99px;padding:.35rem .75rem;font-size:.78rem;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4);">Rt 70 Pass</button>
+      <button type="button" class="cov-pin" data-hub="Airport Cargo Hub" data-eta="22 min ETA" data-units="24/7 fleet & cargo rapid response" style="position:absolute;left:32%;top:76%;transform:translate(-50%,-50%);background:var(--surface);color:var(--text);border:2px solid var(--accent);border-radius:99px;padding:.35rem .75rem;font-size:.78rem;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.4);">Airport Hub</button>
+
+      <!-- Info Card -->
+      <div id="cov-info" style="position:absolute;bottom:1rem;inset-inline-start:1rem;background:rgba(15,23,42,.92);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-md);padding:.9rem 1.15rem;color:#fff;max-width:300px;backdrop-filter:blur(8px);">
+        <div id="cov-name" style="font-weight:700;font-size:.95rem;">Downtown Metro Hub</div>
+        <div id="cov-eta" style="color:var(--accent2);font-size:.82rem;font-weight:600;margin-top:.15rem;">16 min ETA</div>
+        <div id="cov-units" style="color:#cbd5e1;font-size:.8rem;margin-top:.2rem;">18 flatbeds & wheel-lifts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §3  FLEET LINEUP (Imageless) -->
+<section class="sec" style="background:var(--bg2);">
+  <div class="wrap">
+    <div style="text-align:center;max-width:520px;margin-inline:auto;margin-bottom:3rem;" class="rv">
+      <span class="lbl lbl-accent">Equipment</span>
+      <h2>140+ modern recovery units.</h2>
+    </div>
+    <div class="four">
+      <div class="rv" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <div class="stat-num" style="font-size:2.2rem;margin-bottom:.5rem;">72</div>
+        <h4>21ft Aluminum Rollback</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">12k lb winch · AWD & EV safe</p>
+      </div>
+      <div class="rv" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <div class="stat-num" style="font-size:2.2rem;margin-bottom:.5rem;">24</div>
+        <h4>Low-Profile Wheel-Lift</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">6'6" clearance · garages & bridges</p>
+      </div>
+      <div class="rv" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <div class="stat-num" style="font-size:2.2rem;margin-bottom:.5rem;">14</div>
+        <h4>50-Ton Rotator</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">360° boom · semi & rollover recovery</p>
+      </div>
+      <div class="rv" style="padding:2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);">
+        <div class="stat-num" style="font-size:2.2rem;margin-bottom:.5rem;">30</div>
+        <h4>Mobile Service Vans</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">Jump packs · lockout · fuel · air</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §4  READINESS — dark band with progress -->
+<section class="sec" style="background:#0b1120;">
+  <div class="wrap two" style="gap:4rem;">
+    <div class="rv-l">
+      <span class="lbl lbl-white">All-Weather Ops</span>
+      <h2 style="color:#fff;margin-bottom:1rem;">Ready for blizzards,<br>floods & midnight calls.</h2>
+      <p style="color:#cbd5e1;max-width:380px;">Surge staging pre-activates hours before winter storms hit critical corridors.</p>
+    </div>
+    <div class="rv-r" style="display:flex;flex-direction:column;gap:1.5rem;">
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.88rem;color:#e2e8f0;margin-bottom:.5rem;"><span>Metro Flatbeds</span><strong style="color:#fff;font-family:'JetBrains Mono',monospace;">94%</strong></div>
+        <div style="height:6px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;"><div style="width:94%;height:100%;background:var(--accent);border-radius:99px;"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.88rem;color:#e2e8f0;margin-bottom:.5rem;"><span>Interstate Patrol</span><strong style="color:#fff;font-family:'JetBrains Mono',monospace;">98%</strong></div>
+        <div style="height:6px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;"><div style="width:98%;height:100%;background:var(--accent2);border-radius:99px;"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:.88rem;color:#e2e8f0;margin-bottom:.5rem;"><span>Heavy Rotator Standby</span><strong style="color:#fff;font-family:'JetBrains Mono',monospace;">88%</strong></div>
+        <div style="height:6px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;"><div style="width:88%;height:100%;background:#38bdf8;border-radius:99px;"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §5  PARTNER SHOPS (Imageless) -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap two" style="gap:3rem;">
+    <div class="rv-l">
+      <span class="lbl lbl-accent">Drop-Off Network</span>
+      <h2 style="margin-bottom:1rem;">Direct drop to 220+ partner shops.</h2>
+      <p style="color:var(--muted);max-width:400px;">OEM dealerships, EV service centers, and 24/7 tire shops — key-drop confirmed with timestamped photos.</p>
+    </div>
+    <div class="rv-r" style="display:flex;flex-direction:column;gap:.75rem;">
+      <div style="display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;border-radius:var(--radius-sm);background:var(--surface);border:1px solid var(--border);">
+        <span style="color:var(--accent);font-weight:700;">✓</span><span style="font-size:.95rem;">OEM warranty-safe after-hours drop</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;border-radius:var(--radius-sm);background:var(--surface);border:1px solid var(--border);">
+        <span style="color:var(--accent);font-weight:700;">✓</span><span style="font-size:.95rem;">EV high-voltage tow-eye trained</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;border-radius:var(--radius-sm);background:var(--surface);border:1px solid var(--border);">
+        <span style="color:var(--accent);font-weight:700;">✓</span><span style="font-size:.95rem;">24/7 commercial tire & diesel bays</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §6  LONG HAUL CTA -->
+<section style="background:var(--accent);padding-block:5rem;">
+  <div class="wrap rv" style="text-align:center;max-width:600px;margin-inline:auto;">
+    <h2 style="color:#fff;margin-bottom:.85rem;">Need out-of-zone transport?</h2>
+    <p style="color:rgba(255,255,255,.85);margin-bottom:2rem;">State-to-state flatbed for collector cars, fleet transfers, and breakdown repatriation.</p>
+    <a href="contact.html" class="btn btn-white btn-lg">Request Long-Haul Quote →</a>
+  </div>
+</section>
+
+<div id="ftr-mount"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.querySelectorAll('.cov-pin').forEach(function (pin) {
+  pin.addEventListener('click', function () {
+    document.querySelectorAll('.cov-pin').forEach(function (p) {
+      p.style.background = 'var(--surface)';
+      p.style.color = 'var(--text)';
+      p.style.borderColor = 'var(--accent)';
+    });
+    pin.style.background = 'var(--accent)';
+    pin.style.color = '#fff';
+    pin.style.borderColor = '#fff';
+    document.getElementById('cov-name').textContent = pin.dataset.hub;
+    document.getElementById('cov-eta').textContent = pin.dataset.eta;
+    document.getElementById('cov-units').textContent = pin.dataset.units;
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ApexTow — 24/7 Emergency Towing & Roadside</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e55a00'/><text y='72' x='14' font-size='68' font-family='system-ui' font-weight='900' fill='white'>A</text></svg>">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+<div id="hdr-mount"></div>
+
+<!-- ══════════════════════════════════
+     §1  HERO — full-bleed, clean neutral overlay
+     ══════════════════════════════════ -->
+<section class="full-bg" style="min-height:70vh;display:flex;align-items:center;">
+  <img class="full-bg__img" src="w1.png" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStrVKoGx4weyqFNv529acB46HU8M5QIggMrFxId9nyGzs0LKucR110o-o&s=10'" alt="Recovery vehicle on highway">
+  <div class="full-bg__overlay" style="background:linear-gradient(135deg,rgba(10,15,28,.82) 0%,rgba(10,15,28,.45) 100%);"></div>
+  <div class="wrap sec" style="display:grid;grid-template-columns:1fr;max-width:780px;margin-inline:auto;text-align:center;">
+    <div class="rv">
+      <span class="chip chip-white" style="margin-bottom:1.5rem;">
+        <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;display:inline-block;"></span>
+        24/7 Dispatch Active · Avg ETA 18 min
+      </span>
+      <h1 style="color:#fff;margin-bottom:1.25rem;">Stranded?<br><span style="color:var(--accent2);">Help arrives</span><br>in minutes.</h1>
+      <p style="color:#e2e8f0;font-size:1.1rem;max-width:520px;margin-inline:auto;margin-bottom:2rem;">GPS-tracked flatbeds, locked upfront rates before dispatch, and WreckMaster-certified operators ready 24/7 across metro and interstate corridors.</p>
+      <form id="eta-form" style="display:flex;gap:.65rem;flex-wrap:wrap;max-width:540px;margin-inline:auto;justify-content:center;">
+        <input type="text" id="eta-loc" class="fc" style="flex:1 1 220px;background:rgba(255,255,255,.95);color:#0f172a;" placeholder="Your location, highway exit, or ZIP…" required>
+        <button type="submit" class="btn btn-fill">Get Live ETA</button>
+        <a href="tel:+18005550199" class="btn btn-ghost-white">Call Now</a>
+      </form>
+    </div>
+  </div>
+  <!-- floating card -->
+  <div style="position:absolute;bottom:2rem;inset-inline-end:2rem;z-index:3;" class="rv">
+    <div class="glass-dark" style="padding:1.1rem 1.4rem;min-width:210px;">
+      <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:#cbd5e1;margin-bottom:.35rem;">Response Fleet</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;">140<span style="color:var(--accent2);">+</span></div>
+      <div style="font-size:.85rem;color:#e2e8f0;">Active recovery units</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     §2  BENTO  — services at a glance
+     ══════════════════════════════════ -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+      <div class="rv">
+        <span class="lbl lbl-accent">What We Do</span>
+        <h2>Every rescue,<br>one call away.</h2>
+      </div>
+      <a href="services.html" class="btn btn-stroke rv">All Services →</a>
+    </div>
+
+    <div class="bento" style="grid-auto-rows:240px;">
+      <!-- Big left card -->
+      <div class="img-card b-span5 b-row2 rv">
+        <img src="https://www.shutterstock.com/shutterstock/videos/3808024445/thumb/1.jpg?ip=x480" alt="Flatbed tow truck">
+        <div class="img-card__badge">24/7</div>
+        <div class="img-card__over">
+          <div class="img-card__stat">$85<span style="font-size:1.2rem;">+</span></div>
+          <h3>Flatbed Towing</h3>
+          <p>All-wheels-off transport for EVs, AWD, and sports cars.</p>
+        </div>
+      </div>
+      <!-- Top-right 2 cards -->
+      <div class="img-card b-span4 rv">
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80" alt="Battery jump start">
+        <div class="img-card__over">
+          <h4>Battery Jump</h4>
+          <p>12V/24V surge-protected boost & alternator test. Flat $65.</p>
+        </div>
+      </div>
+      <div class="img-card b-span3 rv">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Tire change">
+        <div class="img-card__over">
+          <h4>Tire Change</h4>
+          <p>Spare mount, calibrated torque. $75.</p>
+        </div>
+      </div>
+      <!-- Stat card (no image) -->
+      <div class="b-span3 rv" style="background:var(--accent);border-radius:var(--radius-md);padding:1.75rem;display:flex;flex-direction:column;justify-content:space-between;">
+        <span class="lbl lbl-white">Response</span>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:#fff;line-height:1;">18<span style="font-size:1.5rem;">min</span></div>
+          <div style="color:rgba(255,255,255,.75);font-size:.9rem;margin-top:.25rem;">Avg metro ETA</div>
+        </div>
+      </div>
+      <div class="img-card b-span4 rv">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Ho6M7P3hPNvfYt5fMkWEmx7N4OHbTA9MntbXgG__EbrM4luhZwjGsQQ&s=10" alt="Lockout rescue">
+        <div class="img-card__over">
+          <h4>Lockout Rescue</h4>
+          <p>Non-marring air-wedge entry. $70.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     §3  HOW IT WORKS — visual steps
+     ══════════════════════════════════ -->
+<section class="sec" style="background:var(--bg2);">
+  <div class="wrap">
+    <div style="text-align:center;max-width:600px;margin-inline:auto;margin-bottom:3.5rem;" class="rv">
+      <span class="lbl lbl-accent">Process</span>
+      <h2>Back on the road in 4 steps.</h2>
+    </div>
+    <div class="steps-track rv">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <h4>Pin Location</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">GPS pin or highway mile marker — online or by phone.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <h4>Confirm Rate</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">Locked upfront quote. Zero hidden add-ons.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <h4>Track Driver</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">Live GPS link via SMS. See truck move toward you.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <h4>Safe Drop-Off</h4>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:.35rem;">Digital photo inspection. Insurance-ready receipt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     §4  WHY US — split image + stats
+     ══════════════════════════════════ -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap two" style="gap:4rem;">
+    <div class="rv-l" style="position:relative;">
+      <div style="border-radius:var(--radius-xl);overflow:hidden;height:520px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3uS0u2kGWzHxfwA_CCVk4rbFlhCpnY4_kgkPuxvDhriMoroaEuwATj8&s=10" alt="Certified ApexTow operator" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <!-- floating accent chip -->
+      <div style="position:absolute;top:1.5rem;inset-inline-start:1.5rem;background:var(--accent);color:#fff;padding:.6rem 1rem;border-radius:var(--radius-sm);">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;line-height:1;">99.4%</div>
+        <div style="font-size:.78rem;opacity:.85;">Damage-free rate</div>
+      </div>
+      <div class="glass-dark" style="position:absolute;bottom:1.5rem;inset-inline-start:1.5rem;padding:.9rem 1.2rem;">
+        <div style="font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);">Coverage</div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;">14 Dispatch Hubs</div>
+      </div>
+    </div>
+    <div class="rv-r">
+      <span class="lbl lbl-accent">Why ApexTow</span>
+      <h2 style="margin-bottom:1rem;">Safety-first recovery, proven by numbers.</h2>
+      <div class="divider"></div>
+      <div class="stat-row" style="margin-block:2rem;">
+        <div class="stat-item">
+          <div class="stat-num">$0</div>
+          <div style="font-size:.85rem;color:var(--muted);margin-top:.3rem;">Surprise hookup fees</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.9</div>
+          <div style="font-size:.85rem;color:var(--muted);margin-top:.3rem;">Avg driver rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">28k+</div>
+          <div style="font-size:.85rem;color:var(--muted);margin-top:.3rem;">Annual rescues</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;">
+        <div style="display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;border-radius:var(--radius-sm);background:var(--bg2);">
+          <span style="color:var(--accent);font-size:1.1rem;">✓</span>
+          <span style="font-size:.93rem;">Soft-strap AWD & EV flatbed loading</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;border-radius:var(--radius-sm);background:var(--bg2);">
+          <span style="color:var(--accent);font-size:1.1rem;">✓</span>
+          <span style="font-size:.93rem;">4-angle photo inspection, before & after</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;border-radius:var(--radius-sm);background:var(--bg2);">
+          <span style="color:var(--accent);font-size:1.1rem;">✓</span>
+          <span style="font-size:.93rem;">Direct insurance billing, zero forms</span>
+        </div>
+      </div>
+      <a href="about.html" class="btn btn-stroke">Our Story & Standards →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     §5  TESTIMONIALS — clean dark band
+     ══════════════════════════════════ -->
+<section class="sec" style="background:#0b1120;min-height:520px;">
+  <div class="wrap sec">
+    <div style="text-align:center;margin-bottom:3rem;" class="rv">
+      <span class="lbl lbl-white">Verified Reviews</span>
+      <h2 style="color:#fff;">Drivers who made it home.</h2>
+    </div>
+    <div class="three" style="gap:1.25rem;">
+      <div class="glass rv" style="padding:1.75rem;">
+        <div style="color:var(--accent2);font-size:1.1rem;margin-bottom:.85rem;">★★★★★</div>
+        <p style="color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.65;margin-bottom:1.1rem;">"Alternator died on I-95 at midnight. Truck arrived in 16 minutes. Upfront price, zero drama."</p>
+        <div style="font-weight:700;color:#fff;">Marcus Vance</div>
+        <div style="font-size:.8rem;color:rgba(255,255,255,.45);">Tesla Model Y Owner</div>
+      </div>
+      <div class="glass rv" style="padding:1.75rem;">
+        <div style="color:var(--accent2);font-size:1.1rem;margin-bottom:.85rem;">★★★★★</div>
+        <p style="color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.65;margin-bottom:1.1rem;">"We manage 42 delivery vans. ApexTow's fleet billing cut our downtime more than any vendor before."</p>
+        <div style="font-weight:700;color:#fff;">Elena Rostova</div>
+        <div style="font-size:.8rem;color:rgba(255,255,255,.45);">Fleet Ops Director</div>
+      </div>
+      <div class="glass rv" style="padding:1.75rem;">
+        <div style="color:var(--accent2);font-size:1.1rem;margin-bottom:.85rem;">★★★★★</div>
+        <p style="color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.65;margin-bottom:1.1rem;">"Locked keys in trunk in a downpour. Tech opened it in under two minutes — no scratches at all."</p>
+        <div style="font-weight:700;color:#fff;">Devon Brooks</div>
+        <div style="font-size:.8rem;color:rgba(255,255,255,.45);">Daily Commuter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     §6  CTA BANNER — bold orange
+     ══════════════════════════════════ -->
+<section style="background:var(--accent);padding-block:5rem;">
+  <div class="wrap" style="text-align:center;" class="rv">
+    <h2 style="color:#fff;margin-bottom:.85rem;">Stranded right now?</h2>
+    <p style="color:rgba(255,255,255,.8);max-width:480px;margin-inline:auto;margin-bottom:2rem;font-size:1.05rem;">Our 24/7 dispatchers route the nearest GPS-tracked truck to you in seconds.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-white btn-lg">Request Dispatch</a>
+      <a href="services.html" class="btn btn-ghost-white btn-lg">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<div id="ftr-mount"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

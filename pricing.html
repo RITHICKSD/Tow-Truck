@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pricing — ApexTow Upfront Rates & Plans</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23e55a00'/><text y='72' x='14' font-size='68' font-family='system-ui' font-weight='900' fill='white'>A</text></svg>">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+<div id="hdr-mount"></div>
+
+<!-- §1  HERO — dark, guaranteed promise -->
+<section class="full-bg" style="min-height:55vh;display:flex;align-items:flex-end;padding-bottom:4rem;">
+  <img class="full-bg__img" src="w3.jpg" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='w3.png'}else if(this.dataset.t==1){this.dataset.t=2;this.src='w3.webp'}else{this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1600&q=80'}" alt="Upfront pricing guarantee">
+  <div class="full-bg__overlay"></div>
+  <div class="wrap rv" style="text-align:center;max-width:720px;margin-inline:auto;">
+    <span class="chip chip-white" style="margin-bottom:1rem;">No Hidden Fees · 24/7 Flat Rates</span>
+    <h1 style="color:#fff;margin-bottom:.85rem;">Locked rate before<br>the truck even <em style="color:var(--accent2);font-style:normal;">moves.</em></h1>
+  </div>
+</section>
+
+<!-- §2  INTERACTIVE ESTIMATOR -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap two" style="gap:3rem;align-items:start;">
+    <div class="rv-l">
+      <span class="lbl lbl-accent">Cost Estimator</span>
+      <h2 style="margin-bottom:1.5rem;">Calculate your tow, right now.</h2>
+      <div class="fg">
+        <label>Service Type</label>
+        <select id="c-svc" class="fc">
+          <option value="flatbed">Flatbed Tow — $85 base + $4.00/mi</option>
+          <option value="ev">EV / Low-Clearance — $110 base + $4.50/mi</option>
+          <option value="heavy">Medium / Heavy Commercial — $195 base + $7.50/mi</option>
+          <option value="roadside">On-Site Roadside (flat) — $70</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Tow Distance: <strong class="mono" style="color:var(--accent);" id="mi-lbl">12 miles</strong></label>
+        <input type="range" id="c-miles" min="1" max="100" value="12" style="width:100%;accent-color:var(--accent);">
+      </div>
+      <div class="fg">
+        <label>Winch-Out Needed?</label>
+        <select id="c-winch" class="fc">
+          <option value="no">No winch-out needed</option>
+          <option value="yes">Yes — add $45</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="rv-r" style="border-radius:var(--radius-xl);background:#0a0a0a;padding:2.5rem;position:sticky;top:calc(var(--hdr-height) + 1.5rem);">
+      <div style="font-family:'DM Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.4);margin-bottom:1rem;">Locked Estimate</div>
+      <div id="est-total" style="font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;color:var(--accent2);line-height:1;margin-bottom:.5rem;">$133</div>
+      <div id="est-breakdown" style="color:rgba(255,255,255,.5);font-size:.88rem;margin-bottom:2rem;">$85 base + 12 mi × $4.00/mi</div>
+      <ul style="display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem;">
+        <li style="display:flex;align-items:center;gap:.6rem;font-size:.88rem;color:rgba(255,255,255,.7);"><span style="color:var(--accent);">✓</span> Soft-strap loading + 4-angle photo</li>
+        <li style="display:flex;align-items:center;gap:.6rem;font-size:.88rem;color:rgba(255,255,255,.7);"><span style="color:var(--accent);">✓</span> Live GPS driver tracking link</li>
+        <li style="display:flex;align-items:center;gap:.6rem;font-size:.88rem;color:rgba(255,255,255,.7);"><span style="color:var(--accent);">✓</span> Insurance-ready digital receipt</li>
+      </ul>
+      <a href="contact.html" class="btn btn-fill" style="width:100%;">Lock Rate & Request Truck →</a>
+    </div>
+  </div>
+</section>
+
+<!-- §3  ON-DEMAND RATES — visual cards with big numbers -->
+<section class="sec" style="background:var(--bg2);">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:3rem;" class="rv">
+      <span class="lbl lbl-accent">Pay Per Use</span>
+      <h2>On-demand rates, no membership required.</h2>
+    </div>
+    <div class="four">
+      <div class="rv" style="border-radius:var(--radius-xl);background:var(--surface);padding:2rem;border:1px solid var(--border);text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--accent);">$65</div>
+        <h4 style="margin-top:.5rem;">Battery Jump</h4>
+        <p style="color:var(--muted);font-size:.85rem;margin-top:.35rem;">Commercial boost + alternator test</p>
+      </div>
+      <div class="rv" style="border-radius:var(--radius-xl);background:var(--surface);padding:2rem;border:1px solid var(--border);text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--accent);">$70</div>
+        <h4 style="margin-top:.5rem;">Lockout</h4>
+        <p style="color:var(--muted);font-size:.85rem;margin-top:.35rem;">Scratch-free air-wedge entry</p>
+      </div>
+      <div class="rv" style="border-radius:var(--radius-xl);background:var(--surface);padding:2rem;border:1px solid var(--border);text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--accent);">$75</div>
+        <h4 style="margin-top:.5rem;">Tire Change</h4>
+        <p style="color:var(--muted);font-size:.85rem;margin-top:.35rem;">Spare install, torque-wrench tight</p>
+      </div>
+      <div class="rv" style="border-radius:var(--radius-xl);background:var(--surface);padding:2rem;border:1px solid var(--border);text-align:center;">
+        <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--accent);">$60</div>
+        <h4 style="margin-top:.5rem;">Fuel Delivery</h4>
+        <p style="color:var(--muted);font-size:.85rem;margin-top:.35rem;">3 gal gas or diesel to your shoulder</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §4  MEMBERSHIP PLANS — billing toggle -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:2rem;" class="rv">
+      <span class="lbl lbl-accent">Annual Protection</span>
+      <h2>Year-round peace of mind.</h2>
+    </div>
+    <div style="display:flex;justify-content:center;gap:.5rem;margin-bottom:3rem;" id="bill-toggle">
+      <button class="tab on" id="bill-mo">Monthly</button>
+      <button class="tab" id="bill-yr">Annual — Save 20%</button>
+    </div>
+    <div class="three">
+      <div class="rv" style="border-radius:var(--radius-xl);background:var(--surface);padding:2rem;border:1px solid var(--border);">
+        <div style="font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:1rem;">Solo Driver</div>
+        <div class="plan-price" data-mo="$9" data-yr="$7" style="font-family:'Syne',sans-serif;font-size:3.2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:.35rem;">$9<span style="font-size:1rem;color:var(--muted);">/mo</span></div>
+        <ul style="display:flex;flex-direction:column;gap:.5rem;margin:1.25rem 0 1.75rem;font-size:.88rem;color:var(--muted);">
+          <li>✓ 4 roadside calls/year</li><li>✓ 25-mile tow radius</li><li>✓ Jump, lockout & tire included</li>
+        </ul>
+        <a href="login.html" class="btn btn-stroke" style="width:100%;">Select Plan</a>
+      </div>
+      <div class="rv" style="border-radius:var(--radius-xl);background:var(--accent);padding:2rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+          <div style="font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.65);">Family Guard</div>
+          <span style="background:rgba(255,255,255,.2);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .6rem;border-radius:99px;">Popular</span>
+        </div>
+        <div class="plan-price" data-mo="$16" data-yr="$13" style="font-family:'Syne',sans-serif;font-size:3.2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:.35rem;">$16<span style="font-size:1rem;color:rgba(255,255,255,.65);">/mo</span></div>
+        <ul style="display:flex;flex-direction:column;gap:.5rem;margin:1.25rem 0 1.75rem;font-size:.88rem;color:rgba(255,255,255,.75);">
+          <li>✓ Unlimited roadside calls</li><li>✓ 100-mile flatbed radius</li><li>✓ EV & AWD priority dispatch</li>
+        </ul>
+        <a href="login.html" class="btn btn-white" style="width:100%;">Select Plan</a>
+      </div>
+      <div class="rv" style="border-radius:var(--radius-xl);background:var(--surface);padding:2rem;border:1px solid var(--border);">
+        <div style="font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:1rem;">Fleet (per vehicle)</div>
+        <div class="plan-price" data-mo="$39" data-yr="$31" style="font-family:'Syne',sans-serif;font-size:3.2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:.35rem;">$39<span style="font-size:1rem;color:var(--muted);">/mo</span></div>
+        <ul style="display:flex;flex-direction:column;gap:.5rem;margin:1.25rem 0 1.75rem;font-size:.88rem;color:var(--muted);">
+          <li>✓ Priority commercial lane</li><li>✓ 150-mile tow & winch</li><li>✓ Net-30 consolidated invoicing</li>
+        </ul>
+        <a href="contact.html" class="btn btn-stroke" style="width:100%;">Fleet Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §5  INSURANCE — split minimal -->
+<section class="sec" style="background:var(--bg2);">
+  <div class="wrap two" style="gap:4rem;">
+    <div class="rv-l" style="border-radius:var(--radius-xl);overflow:hidden;height:320px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmR8T7cmcwc0vjOIf8uPeCpTiNVtTos_Vplw6aIW_IGQ&s=10" alt="Insurance receipt" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="rv-r">
+      <span class="lbl lbl-accent">Insurance Claims</span>
+      <h2 style="margin-bottom:1rem;">Instant insurance-ready receipts.</h2>
+      <p style="color:var(--muted);max-width:380px;margin-bottom:1.5rem;">Every invoice includes DOT carrier ID, GPS timestamps, itemized mileage — formatted to match major insurer claim forms.</p>
+      <div style="display:flex;flex-direction:column;gap:.65rem;">
+        <div style="display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;border-radius:var(--radius-sm);background:var(--surface);border:1px solid var(--border);">
+          <span style="color:var(--accent);">✓</span><span style="font-size:.9rem;">Zero night or weekend surcharges</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;border-radius:var(--radius-sm);background:var(--surface);border:1px solid var(--border);">
+          <span style="color:var(--accent);">✓</span><span style="font-size:.9rem;">Same transparent rate 24/7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §6  CTA DARK -->
+<section class="sec" style="background:#0b1120;padding-block:5rem;">
+  <div class="wrap rv" style="text-align:center;max-width:600px;margin-inline:auto;">
+    <h2 style="color:#fff;margin-bottom:.85rem;">Ready for a locked rate?</h2>
+    <p style="color:rgba(255,255,255,.65);margin-bottom:2rem;">Dispatch a truck or check zone coverage now.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-fill btn-lg">Dispatch Truck</a>
+      <a href="coverage.html" class="btn btn-ghost-white btn-lg">Check Coverage</a>
+    </div>
+  </div>
+</section>
+
+<div id="ftr-mount"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
